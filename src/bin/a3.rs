@@ -1,43 +1,12 @@
 fn main(){
 
-let amazon_box = Box{
-width: 1,
-length: 2,
-heigth: 3,
-weight: 5,
-color: Colors::Blue
-};
+    let my_numbers = vec![10,20,30,40];
 
-Box::big_box().show_characteristics();
-}
-
-struct Box{
-    width: i32,
-    length: i32,
-    heigth: i32,
-    weight: i32,
-    color: Colors
-}
-
-impl Box{
-
-    fn big_box() -> Self{
-Self{ width: 100,
-    length: 200,
-    heigth: 300,
-    weight: 500,
-    color: Colors::White}
+    for my_number in &my_numbers {
+        match my_number {
+            30 => println!("thirty"),
+            _ => println!("{:?}", my_number)
+        }
     }
-
-    fn show_characteristics(&self){
-        println!("The characteristics are {:?} {:?} {:?} {:?} {:?}.",
-        self.width, self.length, self.heigth, self.weight, self.color)
-    }
-}
-#[derive(Debug)]
-enum Colors{
-    Green,
-    Blue,
-    Red,
-    White
+    println!("The number of elements is {:?}", my_numbers.len())
 }
